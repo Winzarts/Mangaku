@@ -5,6 +5,10 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
+@app.route('/')
+def home():
+    return "API ini Active"
+
 @app.route('/list-manga', methods=['GET'])
 def get_manga_list():
     page = int(request.args.get('page', 1))
@@ -198,3 +202,6 @@ def get_manga_by_genre(genre_slug):
         "count": len(manga_data),
         "komik": manga_data
     })
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=10000)
