@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_URL = os.getenv("BASE_URL", "https://komiku.org/")
+BASE_URL = os.getenv("BASE_URL")
 USER_AGENT = os.getenv("USER_AGENT", "Mozilla/5.0") 
 TIMEOUT = int(os.getenv("timeout", 30000))
 API_BASE = os.getenv("API_BASE", "http://127.0.0.1:3080")
